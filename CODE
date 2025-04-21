@@ -1,0 +1,40 @@
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv("/content/drive/MyDrive/student-dataset.csv") 
+
+# To View the first few rows
+print(df.head())
+# Dataset info
+print(df.info())
+
+if 'gender' in df.columns:
+    df['gender'] = df['gender'].str.strip().str.lower().replace({'male': 'male', 'm': 'male', 'female': 'female', 'f': 'female'})
+
+if 'country' in df.columns:
+    df['country'] = df['country'].str.strip().str.title()
+
+if 'course' in df.columns:
+    df['course'] = df['course'].str.strip().str.title()
+
+#To Convert 'dob' (date of birth) to consistent date format
+if 'dob' in df.columns:
+    df['dob'] = pd.to_datetime(df['dob'], errors='coerce', dayfirst=True)
+ #To Check and fix data types
+if 'age' in df.columns:
+    df['age'] = pd.to_numeric(df['age'], errors='coerce').fillna(0).astype(int)
+# Drop duplicate rows
+df = df.drop_duplicates()
+# Handle missing values
+df.fillna("Unknown", inplace=True)
+
+# Check for missing values after handling them
+print(df.isnull().sum())
+# Convert date columns to datetime format if any 
+if 'date' in df.columns:
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+# Save the cleaned data
+df.to_csv("/content/drive/MyDrive/student-dataset.csv", index=False)
+print("Cleaned dataset saved!")
+# Save the cleaned dataset
+df.to_csv('cleaned_dataset.csv', index=False)
