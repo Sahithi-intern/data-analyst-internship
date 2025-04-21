@@ -1,37 +1,45 @@
-Student Dataset Cleaning
+**Student Dataset Cleaning**
+**Description**
+This project focuses on cleaning a raw student dataset using Python in Google Colab. The cleaning process involved handling missing values, removing duplicates, standardizing text entries, converting data types, and renaming columns for consistency.
 
- *Description*
-->This project involves cleaning a raw student dataset using Google Colab. The cleaning process includes handling missing values, removing duplicates, standardizing text values, formatting date columns, and fixing incorrect data types.
+**Data Cleaning Steps**
+Handled Missing Values: Identified and addressed missing values using .isnull() and appropriate imputation techniques.
 
+Removed Duplicates: Eliminated duplicate rows using .drop_duplicates().
 
+Standardized Text Columns: Ensured consistency in text fields such as gender and country names by standardizing their formats.
 
--> Data Cleaning Steps
+Data Type Conversion: Converted columns like age to integers and dates to datetime objects for uniformity.
 
-- **Handled Missing Values**: Identified and filled or removed rows with missing data using `.isnull()`.
-- **Removed Duplicates**: Used `.drop_duplicates()` to eliminate duplicate rows.
-- **Standardized Text Columns**: Corrected inconsistent text values like gender and country names.
-- **Date Formatting**: Converted all date fields to a consistent format (`dd-mm-yyyy`).
-- **Column Renaming**: Renamed column headers to lowercase with underscores (e.g., `student_name`, `enrollment_date`).
-- **Data Type Conversion**: Ensured appropriate data types (e.g., age as integer, date as datetime).
+Date Formatting: Reformatted date fields to a consistent format (e.g., dd-mm-yyyy).
 
+Column Renaming: Renamed columns to be lowercase with no spaces, enhancing readability and consistency.
 
--> How to Use
+**How to Use**
+Clone the Repository:
+git clone https://github.com/Sahithi-intern/data-analyst-internship.git
+Access the Cleaned Data:
 
-1. Clone or download the repository.
-2. Use the file `cleaned_student_dataset.csv` to access the cleaned data.
-3. Open and run the `student_data_cleaning.ipynb` (Google Colab notebook) to see or reproduce the cleaning process step-by-step.
+**Navigate to the repository directory.**
 
+Open cleaned_student_dataset.csv to view the cleaned dataset.
 
+**Reproduce the Cleaning Process:**
 
-->Files in this Repository
+Open student_data_cleaning.ipynb in Google Colab or Jupyter Notebook.
 
-- `cleaned_student_dataset.csv` – Final cleaned dataset.
-- `student_data_cleaning.ipynb` – Google Colab notebook with the data cleaning code and explanation.
+Run the notebook cells to replicate the data cleaning steps.
 
+**Files in this Repository**
+cleaned_student_dataset.csv: The final cleaned student dataset.
 
-->Tools Used
+student_data_cleaning.ipynb: The Python notebook detailing the data cleaning process.
+
+->**Tools Used**
 - Python
 - Pandas
 - Google Colab
 - CSV Handling
+**Conclusion:**
+Learned how to clean a dataset, check for null values, and calculate basic statistics using Python. This is a fundamental step in any data analysis project.
 
